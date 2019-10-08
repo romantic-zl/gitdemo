@@ -38,7 +38,7 @@ var vm = new Vue({
                 if (response.data.code == 0){
                     // 用户已绑定
                     var state = this.get_query_string('state');
-                    location.href = 'http://127.0.0.1:8080/';
+                    location.href = 'http://www.meiduo.site:8080/';
                 } else {
                     // 用户未绑定
                     this.access_token = response.data.access_token;
@@ -169,6 +169,7 @@ var vm = new Vue({
                         access_token: this.access_token
                     }, {
                         responseType: 'json',
+                        withCredentials:true,
                     })
                     .then(response => {
                         // 记录用户登录状态
